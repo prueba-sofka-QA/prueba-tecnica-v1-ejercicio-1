@@ -21,6 +21,18 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.apache.groovy:groovy'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// Serenity BDD (Screenplay)
+	testImplementation platform('net.serenity-bdd:serenity-bom:5.3.10')
+	testImplementation 'net.serenity-bdd:serenity-screenplay-webdriver'
+
+	// Cucumber (Step Definitions / Gherkin glue)
+	testImplementation 'io.cucumber:cucumber-java:7.14.0'
+	testImplementation 'io.cucumber:datatable:7.14.0'
+	testImplementation 'io.cucumber:cucumber-junit-platform-engine:7.14.0'
+
+	// Logging bridge for local runs (optional)
+	testImplementation 'org.slf4j:slf4j-simple:2.0.13'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
