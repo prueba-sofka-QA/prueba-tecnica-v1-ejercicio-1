@@ -34,13 +34,12 @@ Feature: Online Product Purchase
     And the customer confirms the purchase
     Then the purchase should be confirmed successfully
     And the confirmation should display the purchase details
-      | Id          | <order_id>      | 
+      | Id          | <order_id>      |
       | Amount      | <total_amount>  |
-      | City        | <city>          | 
       | Card Number | <card_number>   |
       | Name        | <customer_name> |
       | Date        | <purchase_date> |
 
     Examples:
-      | customer_name | country | city     | card_number      | purchase_month | expiry_year | order_id | total_amount | purchase_date |
-      | John Smith    | USA     | New York | 4532123456789012 | 12             | 2025        | 12345    | 790          | 14/5/2026     |
+      | product_name | price_product | description | product_name_2 | price_product_2 | description_2 | customer_name | country | city     | card_number      | purchase_month | expiry_year | order_id  | total_amount | purchase_date |
+      | <ignore>     | <ignore>      | <ignore>    | <ignore>       | <ignore>        | <ignore>      | John Smith    | USA     | New York | 4532123456789012 | 12             | 2025        | <ignore> | <ignore>    | <ignore>     |

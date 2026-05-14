@@ -19,6 +19,9 @@ public class CartPage {
 	public static final Target INPUT_CITY = Target.the("City input")
 			.locatedBy("//div[@id='orderModal']//input[@id='city']");
 
+	public static final Target INPUT_COUNTRY = Target.the("Country input")
+			.locatedBy("//div[@id='orderModal']//input[@id='country']");
+
 	public static final Target INPUT_CREDIT_CARD = Target.the("Credit card input")
 			.locatedBy("//div[@id='orderModal']//input[@id='card']");
 

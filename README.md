@@ -81,4 +81,21 @@ Para efectos de la revisión de este repositorio, este archivo contiene
 
     Ejecuta el escenario para ver las preubas
 
+## Cómo ejecutar la prueba (resumen)
+
+1. Verifica que estés usando **Java 21**.
+2. Ejecuta las pruebas con el wrapper de Gradle desde la raíz del proyecto:
+
+   - **Windows (PowerShell/CMD):**
+     - `.\gradlew.bat clean test`
+   - **Linux/macOS/Git Bash:**
+     - `./gradlew clean test`
+
+3. Revisa el reporte HTML generado por Gradle en:
+   - `build/reports/tests/test/index.html`
+
+## Plan de acción para el proyecto
+
+1. **Creación de proyecto**
+...
 
