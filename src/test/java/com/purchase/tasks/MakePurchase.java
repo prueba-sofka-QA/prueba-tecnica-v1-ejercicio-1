@@ -1,5 +1,6 @@
 package com.purchase.tasks;
 
+import com.purchase.hooks.OpenBrowser;
 import com.purchase.questions.ConfirmationPurchase;
 import com.purchase.ui.CartPage;
 import com.purchase.ui.HomePage;
@@ -12,7 +13,6 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.waits.WaitUntil;
@@ -37,7 +37,7 @@ public class MakePurchase implements Task {
 
 	@Override
 	public <T extends Actor> void performAs(T actor) {
-		actor.attemptsTo(Open.url(Constantes.DEMOBLAZE_URL));
+		actor.attemptsTo(OpenBrowser.AbrirUrl(Constantes.DEMOBLAZE_URL));
 
 		actor.attemptsTo(WaitUntil.the(HomePage.LINK_PRODUCT_1, isVisible()).forNoMoreThan(Constantes.DEFAULT_TIMEOUT_SECONDS).seconds());
 

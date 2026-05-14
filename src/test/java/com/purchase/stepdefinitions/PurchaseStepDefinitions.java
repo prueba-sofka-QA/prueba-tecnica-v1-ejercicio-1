@@ -58,7 +58,7 @@ public class PurchaseStepDefinitions {
         // Implementation here
     }
 
-    @When("the customer proceeds to place the order")
+    @When("the customer proceeds to place the Cart")
     public void placeOrder() {
         // Implementation here
     }

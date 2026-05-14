@@ -6,15 +6,15 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 
 
-public class AbrirNavegador  implements Task {
+public class OpenBrowser  implements Task {
     private String url;
 
 
-    public AbrirNavegador(String url) {
+    public OpenBrowser(String url) {
         this.url = url;
     }
 
-x
+
     @Override
     public <T extends Actor> void performAs(T actor) {        
         actor.attemptsTo(
@@ -23,7 +23,7 @@ x
     }
 
 
-    public static AbrirNavegador AbrirUrl(String url) {
-        return Tasks.instrumented(AbrirNavegador.class, url);
+    public static OpenBrowser AbrirUrl(String url) {
+        return Tasks.instrumented(OpenBrowser.class, url);
     }
 }
