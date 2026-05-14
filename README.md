@@ -94,8 +94,3 @@ Para efectos de la revisión de este repositorio, este archivo contiene
 3. Revisa el reporte HTML generado por Gradle en:
    - `build/reports/tests/test/index.html`
 
-## Plan de acción para el proyecto
-
-1. **Creación de proyecto**
-...
-

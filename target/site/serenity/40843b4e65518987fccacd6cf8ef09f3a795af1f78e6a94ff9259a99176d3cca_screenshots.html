@@ -1,0 +1,570 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff"><link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-3.7.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/2.3.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/2.3.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/2.3.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0.min.js"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+
+    <!-- Swiper.js local styles and script -->
+    <link rel="stylesheet" href="swiper/swiper-bundle.min.css" />
+    <script src="swiper/swiper-bundle.min.js"></script>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const startIndex = parseInt(urlParams.get("screenshot")) || 0;
+
+            new Swiper('.swiper', {
+                initialSlide: startIndex,
+                effect: 'fade',
+                speed: 200,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (index + 1) + "</span>";
+                    },
+                    dynamicBullets: true,
+                    dynamicMainBullets: 3  // Shows 3 main bullets + 2 smaller ones on sides
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                keyboard: {
+                    enabled: true,
+                    onlyInViewport: true
+                }
+            });
+        });
+    </script>
+
+    <style>
+        .swiper {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color: #000;
+            opacity: 1;
+            background: lightgrey;
+        }
+
+        .swiper-pagination-bullet-active {
+            color: #fff;
+            background: #007aff;
+        }
+    </style>
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Gestor BancÃ¡rio</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="5f72467b6a9d3075f5bc03362c756369a60d102ff90b36f17bd1c3ef0de4bab1.html">Registro</a></span>
+                > <span class="truncate-60"><a
+                    href="40843b4e65518987fccacd6cf8ef09f3a795af1f78e6a94ff9259a99176d3cca.html">Customer successfully completes a purchase of multiple products </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 13-05-2026 21:00</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Online Product Purchase </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                As a customer<br />
+I want to select and purchase products from the online store<br />
+So that I can receive confirmation of my order with all relevant details
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="34658a1663fcf042bd7acb3325affbe4e647c8acd84d0228be2f52e1381e61b9.html">10 To 30 Seconds
+                                        (Duration)
+                                </a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Customer successfully completes a purchase of multiple products
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="story-title">
+        <h3>Scenario:</h3>
+        <div class="scenario">Given the customer is browsing the product catalog on the home page<br>When the customer navigates to the first product<br>And the customer sees the first product with<br><table class='embedded'><thead><th>Name</th><th>&lt;product_name&gt;</th></thead><tbody><tr><td>Price</td><td>&lt;price_product&gt;</td></tr><tr><td>Product Description</td><td>&lt;description&gt;</td></tr></tbody></table><br>And the customer adds the first product to the cart<br>And the customer navigates to the home page<br>When the customer navigates to the second product in the catalog<br>And the customer sees the second product with<br><table class='embedded'><thead><th>Name</th><th>&lt;product_name_2&gt;</th></thead><tbody><tr><td>Price</td><td>&lt;price_product_2&gt;</td></tr><tr><td>Product Description</td><td>&lt;description_2&gt;</td></tr></tbody></table><br>And the customer adds the second product to the cart<br>And the customer navigates to the shopping cart<br>And the customer reviews the order<br>When the customer proceeds to place the Cart<br>And the customer completes the purchase form with<br><table class='embedded'><thead><th>Name</th><th>&lt;customer_name&gt;</th></thead><tbody><tr><td>Country</td><td>&lt;country&gt;</td></tr><tr><td>City</td><td>&lt;city&gt;</td></tr><tr><td>Credit Card</td><td>&lt;card_number&gt;</td></tr><tr><td>Month</td><td>&lt;purchase_month&gt;</td></tr><tr><td>Year</td><td>&lt;expiry_year&gt;</td></tr></tbody></table><br>And the customer confirms the purchase<br>Then the purchase should be confirmed successfully<br>And the confirmation should display the purchase details<br><table class='embedded'><thead><th>Id</th><th>&lt;order_id&gt;</th></thead><tbody><tr><td>Amount</td><td>&lt;total_amount&gt;</td></tr><tr><td>Card Number</td><td>&lt;card_number&gt;</td></tr><tr><td>Name</td><td>&lt;customer_name&gt;</td></tr><tr><td>Date</td><td>&lt;purchase_date&gt;</td></tr></tbody></table></div>
+    </div>
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+    <!-- Swiper Carousel -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="774f754ca3ed0907cceffc3468f171e8de2ca350e7605248259aa35690d83c27.png" title=" 1: Customer successfully completes a purchase of multiple products ({product_name=&lt;ignore&gt;, price_product=&lt;ignore&gt;, description=&lt;ignore&gt;, product_name_2=&lt;ignore&gt;, price_product_2=&lt;ignore&gt;, description_2=&lt;ignore&gt;, customer_name=John Smith, country=USA, city=New York, card_number=4532123456789012, purchase_month=12, expiry_year=2025, order_id=&lt;ignore&gt;, total_amount=&lt;ignore&gt;, purchase_date=&lt;ignore&gt;})" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="774f754ca3ed0907cceffc3468f171e8de2ca350e7605248259aa35690d83c27.png" title=" Given the customer is browsing the product catalog on the home page" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="774f754ca3ed0907cceffc3468f171e8de2ca350e7605248259aa35690d83c27.png" title=" Customer open browser" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="774f754ca3ed0907cceffc3468f171e8de2ca350e7605248259aa35690d83c27.png" title=" Customer opens the browser at https://www.demoblaze.com/" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="774f754ca3ed0907cceffc3468f171e8de2ca350e7605248259aa35690d83c27.png" title=" Customer open browser (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="d4045355252fd79ae97766ee4df2de0cc2c435779853fbd17435647b22e434ef.png" title=" Given the customer is browsing the product catalog on the home page (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="d4045355252fd79ae97766ee4df2de0cc2c435779853fbd17435647b22e434ef.png" title=" When the customer navigates to the first product" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c97a262a01f4fd8f3c2319cfd09f2f465e7519f9d0d21fe23ce6f36942599745.png" title=" Customer clicks on First product link in catalog" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="9989fec8ef168c9d3719e703b66626bfcf997f136daa658931dc2fe41f0ef3d3.png" title=" Customer clicks on First product link in catalog (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7c9e06a479e652cd0c54b3b9420b07400268e560524ce77ef43f0c5700d7664d.png" title=" Customer should see a value that is not blank" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7c9e06a479e652cd0c54b3b9420b07400268e560524ce77ef43f0c5700d7664d.png" title=" When the customer navigates to the first product (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7c9e06a479e652cd0c54b3b9420b07400268e560524ce77ef43f0c5700d7664d.png" title=" And the customer sees the first product with
+| Name | &lt;ignore&gt; |
+| Price | &lt;ignore&gt; |
+| Product Description | &lt;ignore&gt; |" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7c9e06a479e652cd0c54b3b9420b07400268e560524ce77ef43f0c5700d7664d.png" title=" Customer should see a value that is not blank" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7c9e06a479e652cd0c54b3b9420b07400268e560524ce77ef43f0c5700d7664d.png" title=" Customer should see a value that is not blank" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7c9e06a479e652cd0c54b3b9420b07400268e560524ce77ef43f0c5700d7664d.png" title=" Customer should see a value that is not blank" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7c9e06a479e652cd0c54b3b9420b07400268e560524ce77ef43f0c5700d7664d.png" title=" And the customer adds the first product to the cart" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7c9e06a479e652cd0c54b3b9420b07400268e560524ce77ef43f0c5700d7664d.png" title=" Customer clicks on Add to cart button" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="dc57bda709e94fdc2ad47f7d0ec9968ecb6d8cfa6000cd23bb2cb130e672210f.png" title=" Customer clicks on Add to cart button (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c588f47f26bd5e202e2b3ab44d86a7c408487c39990a6b3ba82e51fd214c4d2a.png" title=" And the customer adds the first product to the cart (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c588f47f26bd5e202e2b3ab44d86a7c408487c39990a6b3ba82e51fd214c4d2a.png" title=" And the customer navigates to the home page" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c588f47f26bd5e202e2b3ab44d86a7c408487c39990a6b3ba82e51fd214c4d2a.png" title=" Customer clicks on Navbar brand link" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7951e452bddd212e370d438a8d67fe01f27426ebddada308a06f413f585b8d4f.png" title=" Customer clicks on Navbar brand link (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="96bf6415d300e7eb8c598a0b950aade518426d5a95e2d9a7decbefb073c74733.png" title=" And the customer navigates to the home page (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="96bf6415d300e7eb8c598a0b950aade518426d5a95e2d9a7decbefb073c74733.png" title=" When the customer navigates to the second product in the catalog" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="96bf6415d300e7eb8c598a0b950aade518426d5a95e2d9a7decbefb073c74733.png" title=" Customer clicks on Second product link in catalog" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="9989fec8ef168c9d3719e703b66626bfcf997f136daa658931dc2fe41f0ef3d3.png" title=" Customer clicks on Second product link in catalog (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="b462a21b9728bf8efeaedcbc26f534dbcb1ae904a4aa88e1e78ac85c462ce4b6.png" title=" Customer should see a value that is not blank" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="b462a21b9728bf8efeaedcbc26f534dbcb1ae904a4aa88e1e78ac85c462ce4b6.png" title=" When the customer navigates to the second product in the catalog (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="b462a21b9728bf8efeaedcbc26f534dbcb1ae904a4aa88e1e78ac85c462ce4b6.png" title=" And the customer sees the second product with
+| Name | &lt;ignore&gt; |
+| Price | &lt;ignore&gt; |
+| Product Description | &lt;ignore&gt; |" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="b462a21b9728bf8efeaedcbc26f534dbcb1ae904a4aa88e1e78ac85c462ce4b6.png" title=" Customer should see a value that is not blank" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="b462a21b9728bf8efeaedcbc26f534dbcb1ae904a4aa88e1e78ac85c462ce4b6.png" title=" Customer should see a value that is not blank" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="b462a21b9728bf8efeaedcbc26f534dbcb1ae904a4aa88e1e78ac85c462ce4b6.png" title=" Customer should see a value that is not blank" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="b462a21b9728bf8efeaedcbc26f534dbcb1ae904a4aa88e1e78ac85c462ce4b6.png" title=" And the customer adds the second product to the cart" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="b462a21b9728bf8efeaedcbc26f534dbcb1ae904a4aa88e1e78ac85c462ce4b6.png" title=" Customer clicks on Add to cart button" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="d9a57a4549e13041dc29fad98d9686e6668dc868a4fcadbe593b5f0178779bdc.png" title=" Customer clicks on Add to cart button (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="030c38b386f345aed540d7731685015f1643c110971d4c0718239d2f9e976743.png" title=" And the customer adds the second product to the cart (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="030c38b386f345aed540d7731685015f1643c110971d4c0718239d2f9e976743.png" title=" And the customer navigates to the shopping cart" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="030c38b386f345aed540d7731685015f1643c110971d4c0718239d2f9e976743.png" title=" Customer clicks on Cart link" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f5ed1dd4aeca8369029aebea82446c4a74fa1ba9cde1427db92b55ebb73d991.png" title=" Customer clicks on Cart link (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f5ed1dd4aeca8369029aebea82446c4a74fa1ba9cde1427db92b55ebb73d991.png" title=" And the customer navigates to the shopping cart (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="5f5ed1dd4aeca8369029aebea82446c4a74fa1ba9cde1427db92b55ebb73d991.png" title=" And the customer reviews the order" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c67aecde78074b24dbf36fdfe7c572c2073ce087d80740af5f453b78b33de29a.png" title=" Customer should see a value that is not blank" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c67aecde78074b24dbf36fdfe7c572c2073ce087d80740af5f453b78b33de29a.png" title=" Customer should see a value that is not blank" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c67aecde78074b24dbf36fdfe7c572c2073ce087d80740af5f453b78b33de29a.png" title=" Customer should see a value that is not blank" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c67aecde78074b24dbf36fdfe7c572c2073ce087d80740af5f453b78b33de29a.png" title=" Customer should see a value that contains: &lt;[Samsung galaxy s6]&gt;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c67aecde78074b24dbf36fdfe7c572c2073ce087d80740af5f453b78b33de29a.png" title=" Customer should see a value that contains: &lt;[Nokia lumia 1520]&gt;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c67aecde78074b24dbf36fdfe7c572c2073ce087d80740af5f453b78b33de29a.png" title=" And the customer reviews the order (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c67aecde78074b24dbf36fdfe7c572c2073ce087d80740af5f453b78b33de29a.png" title=" When the customer proceeds to place the Cart" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="c67aecde78074b24dbf36fdfe7c572c2073ce087d80740af5f453b78b33de29a.png" title=" Customer clicks on Place Order button" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="a556021a645108eceb8df9190cc1aacc3dbb6448e27e1ab3be4a7c0061dd4ad3.png" title=" Customer clicks on Place Order button (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="1e4b1ba554bce4ba445fe928e2bae1e04597ee3523e10bac3078daf3c0462756.png" title=" When the customer proceeds to place the Cart (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="1e4b1ba554bce4ba445fe928e2bae1e04597ee3523e10bac3078daf3c0462756.png" title=" And the customer completes the purchase form with
+| Name | John Smith |
+| Country | USA |
+| City | New York |
+| Credit Card | 4532123456789012 |
+| Month | 12 |
+| Year | 2025 |" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="8e36f973be0a91c6bc3fd6b5c0975ffb15b5bf04ba9753585e84d4c6c1576926.png" title=" Customer enters 'John Smith' into Name input" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="3e83ec9164f1dfc9d229220aed2bce07e3389f22710561fbddde2f1c0b69681c.png" title=" Customer enters 'John Smith' into Name input (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="3e83ec9164f1dfc9d229220aed2bce07e3389f22710561fbddde2f1c0b69681c.png" title=" Customer enters 'USA' into Country input" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="65f8f3f6db891a74408c9cd0604973ea02aaa29666c9ad2e7937fabcb0196bfb.png" title=" Customer enters 'USA' into Country input (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="65f8f3f6db891a74408c9cd0604973ea02aaa29666c9ad2e7937fabcb0196bfb.png" title=" Customer enters 'New York' into City input" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="9cefab71f422f0ef856e8b9cec977db0f39a72bcd9b5ec59f6fca1803ab23015.png" title=" Customer enters 'New York' into City input (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="9cefab71f422f0ef856e8b9cec977db0f39a72bcd9b5ec59f6fca1803ab23015.png" title=" Customer enters '4532123456789012' into Credit card input" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="58626374dde1204b5895c09abc01aa3a5ec3468059dda2e0730e15b29c5af771.png" title=" Customer enters '4532123456789012' into Credit card input (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="58626374dde1204b5895c09abc01aa3a5ec3468059dda2e0730e15b29c5af771.png" title=" Customer enters '12' into Month input" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="03d38ef178387e60034ff403a5f51b6c42be93491940026ff43e1b12aae1e652.png" title=" Customer enters '12' into Month input (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="03d38ef178387e60034ff403a5f51b6c42be93491940026ff43e1b12aae1e652.png" title=" Customer enters '2025' into Year input" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="af00ad772a560ce7638d6953df6d7c7e96419a552e2e9fb6337f9c26b125f22f.png" title=" Customer enters '2025' into Year input (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="af00ad772a560ce7638d6953df6d7c7e96419a552e2e9fb6337f9c26b125f22f.png" title=" And the customer completes the purchase form with
+| Name | John Smith |
+| Country | USA |
+| City | New York |
+| Credit Card | 4532123456789012 |
+| Month | 12 |
+| Year | 2025 | (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="79e0a32cdf5180e6b3e3a0adbb6cdfac8e278633c5308c8cadf2e3258a76c2c0.png" title=" And the customer confirms the purchase" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="79e0a32cdf5180e6b3e3a0adbb6cdfac8e278633c5308c8cadf2e3258a76c2c0.png" title=" Customer clicks on Purchase button" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="e3be8e728c5517fd506d4f7e1a736f010ae9f44065b89b44782ac9ab1c81fd96.png" title=" Customer clicks on Purchase button (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="e3be8e728c5517fd506d4f7e1a736f010ae9f44065b89b44782ac9ab1c81fd96.png" title=" Customer should see  that is true" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="e5741f3a5623a4fd9a195d3c12e5dcccbd5e434043b5822685042693073de8a5.png" title=" Customer should see  that is true (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="05106ff0ce86cb5317d89f7fe1de889d6adeeffb080a7bbb3f45e0bfa1386cea.png" title=" Customer should see a value that is not blank" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="05106ff0ce86cb5317d89f7fe1de889d6adeeffb080a7bbb3f45e0bfa1386cea.png" title=" Customer should see a value that is not blank" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="05106ff0ce86cb5317d89f7fe1de889d6adeeffb080a7bbb3f45e0bfa1386cea.png" title=" Customer clicks on Sweet alert OK button" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="774f754ca3ed0907cceffc3468f171e8de2ca350e7605248259aa35690d83c27.png" title=" Customer clicks on Sweet alert OK button (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="774f754ca3ed0907cceffc3468f171e8de2ca350e7605248259aa35690d83c27.png" title=" And the customer confirms the purchase (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="774f754ca3ed0907cceffc3468f171e8de2ca350e7605248259aa35690d83c27.png" title=" Then the purchase should be confirmed successfully" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="774f754ca3ed0907cceffc3468f171e8de2ca350e7605248259aa35690d83c27.png" title=" Customer should see a value that is not blank" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="774f754ca3ed0907cceffc3468f171e8de2ca350e7605248259aa35690d83c27.png" title=" And the confirmation should display the purchase details
+| Id | &lt;ignore&gt; |
+| Amount | &lt;ignore&gt; |
+| Card Number | 4532123456789012 |
+| Name | John Smith |
+| Date | &lt;ignore&gt; |" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="774f754ca3ed0907cceffc3468f171e8de2ca350e7605248259aa35690d83c27.png" title=" Customer should see a value that is not blank" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="774f754ca3ed0907cceffc3468f171e8de2ca350e7605248259aa35690d83c27.png" title=" Customer should see a value that contains: &lt;[Id:]&gt;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="774f754ca3ed0907cceffc3468f171e8de2ca350e7605248259aa35690d83c27.png" title=" Customer should see a value that contains: &lt;[Amount:]&gt;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="f58b6153b0b77679770dc683d774c24bb1cb5767ba03e29f05bdc4ee16d778f7.png" title=" Customer should see a value that contains: &lt;[Amount:]&gt; (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="f58b6153b0b77679770dc683d774c24bb1cb5767ba03e29f05bdc4ee16d778f7.png" title=" Customer should see a value that contains: &lt;[Card Number:]&gt;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="f58b6153b0b77679770dc683d774c24bb1cb5767ba03e29f05bdc4ee16d778f7.png" title=" Customer should see a value that contains: &lt;[Name:]&gt;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="f58b6153b0b77679770dc683d774c24bb1cb5767ba03e29f05bdc4ee16d778f7.png" title=" Customer should see a value that contains: &lt;[Date:]&gt;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="f58b6153b0b77679770dc683d774c24bb1cb5767ba03e29f05bdc4ee16d778f7.png" title=" Customer should see a value that contains: &lt;[4532123456789012]&gt;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="f58b6153b0b77679770dc683d774c24bb1cb5767ba03e29f05bdc4ee16d778f7.png" title=" Customer should see a value that contains: &lt;[John Smith]&gt;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="f58b6153b0b77679770dc683d774c24bb1cb5767ba03e29f05bdc4ee16d778f7.png" title=" Customer should see a value that is a match for: &lt;&quot;(?s).*Id:\s*\d+.*&quot;&gt;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="f58b6153b0b77679770dc683d774c24bb1cb5767ba03e29f05bdc4ee16d778f7.png" title=" Customer should see a value that is a match for: &lt;&quot;(?s).*Amount:\s*\d+\s*USD.*&quot;&gt;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="f58b6153b0b77679770dc683d774c24bb1cb5767ba03e29f05bdc4ee16d778f7.png" title=" Customer should see a value that is a match for: &lt;&quot;(?s).*Date:.*&quot;&gt;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="f58b6153b0b77679770dc683d774c24bb1cb5767ba03e29f05bdc4ee16d778f7.png" title=" And the confirmation should display the purchase details
+| Id | &lt;ignore&gt; |
+| Amount | &lt;ignore&gt; |
+| Card Number | 4532123456789012 |
+| Name | John Smith |
+| Date | &lt;ignore&gt; | (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="f58b6153b0b77679770dc683d774c24bb1cb5767ba03e29f05bdc4ee16d778f7.png" title=" 1: Customer successfully completes a purchase of multiple products ({product_name=<ignore>, price_product=<ignore>, description=<ignore>, product_name_2=<ignore>, price_product_2=<ignore>, description_2=<ignore>, customer_name=John Smith, country=USA, city=New York, card_number=4532123456789012, purchase_month=12, expiry_year=2025, order_id=<ignore>, total_amount=<ignore>, purchase_date=<ignore>}) (completed): <span class='success-color'>SUCCESS</span>" width="0" />
+                </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 5.3.7</span>
+</div>
+</body>
+</html>
