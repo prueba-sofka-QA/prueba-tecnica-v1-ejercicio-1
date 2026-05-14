@@ -17,11 +17,23 @@ página https://www.demoblaze.com/ que incluya:
 - Completar el formulario de compra
 - Finalizar la compra
 
-Para efectos de la revisión de este repositorio, este archivo contiene
+## Archivos de referencia
 
-- Un archivo `readme.txt` con las instrucciones paso a paso de ejecución.
-- Un archivo `conclusiones.txt` con los hallazgos y conclusiones del ejercicio
+- Un archivo [readme.txt](/readme.txt) con las instrucciones paso a paso de ejecución.
+- Un archivo [conclusiones.txt](/conclusiones.txt) con los hallazgos y conclusiones del ejercicio
 
+## Cómo ejecutar la prueba (resumen)
+
+1. Verifica que estés usando **Java 21**.
+2. Ejecuta las pruebas con el wrapper de Gradle desde la raíz del proyecto:
+
+   - **Windows (PowerShell/CMD):**
+     - `.\gradlew.bat clean test`
+   - **Linux/macOS/Git Bash:**
+     - `./gradlew clean test`
+
+3. Revisa el reporte HTML generado por Gradle en:
+   - `build/reports/tests/test/index.html`
 
 ## Plan de acción para el proyecto
 
@@ -80,16 +92,4 @@ Para efectos de la revisión de este repositorio, este archivo contiene
 
     Ejecuta el escenario para ver las preubas
 
-## Cómo ejecutar la prueba (resumen)
-
-1. Verifica que estés usando **Java 21**.
-2. Ejecuta las pruebas con el wrapper de Gradle desde la raíz del proyecto:
-
-   - **Windows (PowerShell/CMD):**
-     - `.\gradlew.bat clean test`
-   - **Linux/macOS/Git Bash:**
-     - `./gradlew clean test`
-
-3. Revisa el reporte HTML generado por Gradle en:
-   - `build/reports/tests/test/index.html`
 
