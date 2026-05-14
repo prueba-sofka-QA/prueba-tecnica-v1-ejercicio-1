@@ -1,4 +1,4 @@
-# Ejercicio 1
+# Prueba técnica V1 Ejercicio 1
 
 ## Stack
 
@@ -6,7 +6,6 @@
 - **Patron** Screenplay
 - **Framework de automatización** Serenity BDD
 - **Gestion de dependencias** Gradle
-- **Cumplir con el princpio de responsabilidad única para las Task**
 
 ## Descripción
 

@@ -1,0 +1,35 @@
+Conclusiones de Prueba tecnica v1 Ejercicio v1 
+
+1. Cobretura exitosa
+
+El proyecto automatiza con éxito el ciclo completo de compra, validando el flujo
+
+- Selección y adición de dos productos al carrito.
+- Verificación del contenido del carrito.
+- Diligenciamiento del formulario de pedido.
+- Confirmación final de la transacción.
+
+2. Conclusiones de la arquitectura del código
+
+- Patrón Screenplay
+- Se utiliza para separar las preocupaciones entre Actores, Tareas, e Interacciones, lo que facilita el mantenimiento y la legibilidad 
+- Se aplica el principio de responsabilidad unica para las diversas Tareas
+- Centralización de Selectores: Los localizadores (XPaths) se mantienen en mapas de UI/Page Objects, evitando la dispersión de selectores en los Step Definitions
+
+3. Infraestructura Técnica
+
+- Modernización: El proyecto exige el uso de Java 21, aprovechando las últimas mejoras del lenguaje y asegurando compatibilidad con el toolchain actual 
+- Gestión de Dependencias: Se utiliza Gradle (con gradlew), lo que garantiza un entorno de ejecución consistente para todos los desarrolladores
+- El proyecto utiliza Gherkin para definir los escenarios de prueba en lenguaje natural, facilitando la comunicación con stakeholders no técnicos 
+- Se enfatiza el uso de esperas explícitas y aserciones deterministas para evitar la inestabilidad (flakiness) en las pruebas
+
+4. Documentación
+
+- La documentación permite a los desarrolladores, a efectos de la evaluación de esta prueba, la ejecución de este proyecto
+disponible en: 
+
+readme.txt
+
+5. Estrategia de IA
+
+- El proyecto fue realizado a partir a partir de una infraestructura de agentes, skills e instrucciones especializadas de IA
