@@ -50,4 +50,27 @@ La estructura de la página es idéntica para cualquier producto (independientem
 
 
 
+## Task
 
+### Task: Realizar la compra de dos productos en la página
+
+- Tarea: Realizar la compra de dos productos en la página
+- Pasos:
+    - Navegar por el home en el catálogo de productos
+    - Dar click al enlace del primer producto encontrado
+    - Dirigirse a la pagina del primer producto
+    - Ver informacion de nombre, precio y descripcion del primer producto
+    - Dar click al boton Add to Cart para agregar el prmer producto
+    - Dar click en el botón PRODUCT STORE para volver al home
+    - Dar click al enlace del segundo producto
+    - Dirigirse a la pagina del segundo producto
+    - Ver informacion de nombre, precio y descripcion del segundo producto
+    - Dar click al boton Add to Cart para agregar el segundo producto
+    - Dar click en el botón PRODUCT STORE para volver al home
+    - Dar click al link de Cart para ver el Cart
+    - Ver los productos en el carrito de compras
+    - Dar click al boton Place Order
+    - Llenar en el formulario los datos de Name, City, Credit Card, Month, Year
+    - Dar click al botón Purchase para hacer la compra
+    - Dar click al botón Close para cerrar el fomrmulario
+    - Ver la interfaz de confirmación de compra

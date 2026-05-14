@@ -25,11 +25,17 @@ dependencies {
 	// Serenity BDD (Screenplay)
 	testImplementation platform('net.serenity-bdd:serenity-bom:5.3.10')
 	testImplementation 'net.serenity-bdd:serenity-screenplay-webdriver'
+	testImplementation 'net.serenity-bdd:serenity-ensure'
+	testImplementation 'net.serenity-bdd:serenity-cucumber'
 
 	// Cucumber (Step Definitions / Gherkin glue)
 	testImplementation 'io.cucumber:cucumber-java:7.14.0'
 	testImplementation 'io.cucumber:datatable:7.14.0'
 	testImplementation 'io.cucumber:cucumber-junit-platform-engine:7.14.0'
+
+	// JUnit Platform Suite (needed to run Cucumber via @Suite)
+	testImplementation 'org.junit.platform:junit-platform-suite-api'
+	testRuntimeOnly 'org.junit.platform:junit-platform-suite-engine'
 
 	// Logging bridge for local runs (optional)
 	testImplementation 'org.slf4j:slf4j-simple:2.0.13'

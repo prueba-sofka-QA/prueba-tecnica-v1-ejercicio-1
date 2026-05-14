@@ -22,7 +22,7 @@ Feature: Online Product Purchase
  
     And the customer navigates to the shopping cart
     And the customer reviews the order
-    When the customer proceeds to place the order
+    When the customer proceeds to place the Cart
     And the customer completes the purchase form with 
       | Name        | <customer_name>  | 
       | Country     | <country>        | 
